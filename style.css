@@ -1,0 +1,260 @@
+:root {
+  --purple500: #281154;
+  --purple300: #270082;
+  --purple600: #1b0058;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+body {
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  background-color: var(--purple300);
+  height: 9rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+   z-index: 100;
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.5);
+  padding: 2.4rem 4.8rem;
+}
+
+/** LOGO  */
+.logo {
+  font-size: 3.6rem;
+  font-weight: 700;
+  letter-spacing: 0.3rem;
+  cursor: pointer;
+}
+/** NAV  */
+.nav-menu {
+  padding: 2rem 3.2rem 0 0;
+}
+
+.main-nav {
+  gap: 3.2rem;
+}
+.main-nav a:link,
+.main-nav a:visited {
+  display: inline-block;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  padding-bottom: 0.2rem;
+  position: relative;
+  letter-spacing: 0.2rem;
+}
+
+.main-nav a:link:before,
+.main-nav a:visited:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid #fff;
+  transform: scaleX(0);
+  transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
+}
+.main-nav a:link:before,
+.main-nav a:visited:before {
+  bottom: 0;
+  transform-origin: left;
+}
+
+.main-nav a:hover::before,
+.main-nav a:active::before {
+  border-bottom: 1px solid #fff;
+  transform: scaleX(1);
+}
+/** mobile nav  */
+.mobile-nav {
+  display: none;
+  background: none;
+  cursor: pointer;
+  padding-right: 3.2rem;
+  font-size: 3.6rem;
+}
+
+.mobile-nav i[name='close'] {
+  display: none;
+}
+
+
+/** HERO  */
+.hero-section {
+  height: 100vh;
+  background-image: url('./img/hero_image.png');
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 0 4.8rem;
+  text-align: center;
+  margin: 0 auto;
+}
+.hero-content{
+  margin-top: 8rem;
+}
+
+.primary-heading {
+   font-size: 7rem;
+  letter-spacing: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+.secondary-heading {
+  
+  font-size: 2.4rem;
+  letter-spacing: 0.3rem;
+  margin-bottom: 3.2rem;
+}
+.section-text {
+  max-width: 70%;
+  font-size: 2rem;
+  line-height: 1.5;
+  text-align: center;
+  font-weight: 300;
+}
+
+/** SECTION MUSIC  */
+.music {
+  background-color: var(--purple500);
+  padding: 9.6rem 4.8rem 4.8rem 4.8rem;
+}
+.tertiary-heading {
+  font-size: 3.6rem;
+  gap: 1rem;
+  margin-bottom: 3.2rem;
+  text-transform: capitalize;
+}
+.tertiary-heading i {
+  font-size: 3rem;
+}
+
+.btn:link,
+.btn:visited {
+  display: block;
+  padding: 1.6rem 4.8rem;
+  margin: 4.8rem 0 8rem 0;
+  font-size: 2rem;
+  text-transform: capitalize;
+  border: 1px solid #fff;
+  border-radius: 2rem;
+  transition: all 0.3s;
+}
+.btn:hover {
+  background-color: var(--purple300);
+  transform: scale(0.98);
+}
+.section-text-sub {
+  margin-bottom: 1.6rem;
+  text-transform: capitalize;
+}
+
+.section-img {
+  width: 65%;
+}
+.img {
+  width: 100%;
+}
+/** SECTION COLLECTION  */
+.collection {
+  background-color: #f4f4f4;
+  padding: 9.6rem 4.8rem 4.8rem 4.8rem;
+  color: #333;
+}
+.btn-dark:link,
+.btn-dark:visited {
+  background-color: var(--purple300);
+  color: #fff;
+  transition: all 0.3s;
+}
+.btn-dark:link:hover,
+.btn-dark:link:visited {
+  transform: scale(0.98);
+}
+
+/** SECTION ACTIVITY  */
+.activity {
+  padding: 9.6rem 4.8rem 4.8rem 4.8rem;
+  background-image: url('./img/video.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: calc(100vh - 9rem);
+  background-attachment: fixed;
+}
+/** SECTION CARD  */
+.cards {
+  padding: 8rem 4.8rem 2.4rem 4.8rem;
+}
+.cards.flex-row {
+  gap: 3rem;
+}
+.card-img .img {
+  width: 40rem;
+}
+.card-text {
+  color: #333;
+}
+.cards .section-text {
+  max-width: 100%;
+}
+
+/** FOOTER  */
+.footer {
+  padding: 4.8rem 2.4rem 2.4rem 2.4rem;
+  background-color: var(--purple600);
+}
+.grid-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+}
+.store h3 {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  color: #a499bc;
+}
+.store-list li a {
+  display: inline-block;
+  padding: 0.8rem 0;
+  font-size: 1.6rem;
+}
+
+.footer-copy {
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin-top: 2.4rem;
+  text-align: center;
+  color: #a499bc;
+}
